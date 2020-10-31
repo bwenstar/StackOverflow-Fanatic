@@ -1,0 +1,26 @@
+name: fanatic 
+on:
+  schedule:
+  - cron: '7 13 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+
+      - name: Execute Python script
+        env:
+          SO_USERNAME: ${{ secrets.SO_USERNAME }}
+          SO_PASSWORD: ${{ secrets.SO_PASSWORD }}
+        run: |
+          python fanatic.py
+
