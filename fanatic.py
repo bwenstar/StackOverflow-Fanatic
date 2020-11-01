@@ -8,7 +8,7 @@ SO_USERNAME = os.environ.get('SO_USERNAME')
 SO_PASSWORD = os.environ.get('SO_PASSWORD')
 
 opts = Options()
-opts.headless = False
+opts.headless = True
 driver = webdriver.Firefox(options = opts)
 
 try:
