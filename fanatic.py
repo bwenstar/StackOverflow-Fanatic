@@ -20,7 +20,10 @@ try:
     driver.find_element_by_xpath('//a[@class="my-profile js-gps-track"]').click()
     time.sleep(5)
 except Exception as e:
-    driver.quit()
+    try: 
+        driver.quit()
+    except Exception as e:
+        pass
     sys.exit("generic Selenium exception: " + str(e))
 
 driver.quit()
