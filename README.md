@@ -10,4 +10,4 @@ StackOverflow crowns users with a 'Fanatic Badge' if you log into your account f
     * `SO_USERNAME` - the email you use for StackOverflow
     * `SO_PASSWORD` - your StackOverflow password
 
-Once these steps are complete, GitHub Actions will take care of the rest. Currently, the script is configured to run daily @ 13:07 UTC. If you'd like, you can chagne what time it will run by modifying the `.github/workflows/fanatic.yml` file. Don't forget to disable the Action once you've received your Fanatic Badge.
+Once these steps are complete, GitHub Actions will take care of the rest. Currently, the script is configured to run daily @ 13:07 UTC. If you'd like, you can change what time it will run by modifying the `.github/workflows/fanatic.yml` file. Don't forget to disable the Action once you've received your Fanatic Badge.
