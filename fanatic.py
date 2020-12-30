@@ -17,7 +17,7 @@ try:
     driver.find_element_by_xpath('//input[@id="password"]').send_keys(SO_PASSWORD)
     driver.find_element_by_xpath('//button[@id="submit-button"]').click()
     time.sleep(2)
-    driver.find_element_by_xpath('//a[@class="my-profile js-gps-track"]').click()
+    driver.find_element_by_xpath('//a[contains(@class,"my-profile")]').click()
     time.sleep(5)
 except Exception as e:
     try: 
