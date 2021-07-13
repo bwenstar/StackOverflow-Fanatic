@@ -2,6 +2,8 @@ name: fanatic
 on:
   schedule:
   - cron: '7 13 * * *'
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,9 +20,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Execute Python script
+        uses: nick-invision/retry@v2.4.0
         env:
           SO_USERNAME: ${{ secrets.SO_USERNAME }}
           SO_PASSWORD: ${{ secrets.SO_PASSWORD }}
-        run: |
-          python fanatic.py
-
+        with:
+          timeout_minutes: 60
+          max_attempts: 3
+          retry_wait_seconds: 120
+          retry_on: error
+          command: |
+            python fanatic.py
