@@ -17,7 +17,10 @@ try:
     driver.find_element_by_xpath('//input[@id="password"]').send_keys(SO_PASSWORD)
     driver.find_element_by_xpath('//button[@id="submit-button"]').click()
     time.sleep(2)
-    driver.find_element_by_xpath('//a[contains(@class,"profile_summary.click()")]').click()
+    driver.find_element_by_xpath('//a[contains(@class,"my-profile")]').click()
+    time.sleep(5)
+    driver.get('https://stackoverflow.com/users/logout')
+    driver.find_element_by_xpath('//*[@id="content"]/div/form/div[2]/button').click()
     time.sleep(5)
 except Exception as e:
     try: 
@@ -28,4 +31,3 @@ except Exception as e:
 
 driver.quit()
 sys.exit()
-
