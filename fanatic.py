@@ -18,7 +18,7 @@ try:
     driver.find_element_by_xpath('//button[@id="submit-button"]').click()
     time.sleep(2)
     #driver.find_element_by_xpath('//a[contains(@class,"my-profile")]').click()
-    driver.find_element_by_xpath('//a[contains(@class,"profile_summary")]').click()
+    driver.find_element_by_xpath('//a[contains(@class,"s-user-card__small")]').click()
     time.sleep(5)
     driver.get('https://stackoverflow.com/users/logout')
     driver.find_element_by_xpath('//*[@id="content"]/div/form/div[2]/button').click()
