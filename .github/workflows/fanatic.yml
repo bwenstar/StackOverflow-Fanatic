@@ -31,3 +31,5 @@ jobs:
           retry_on: error
           command: |
             python fanatic.py
+      - name: Keep Alive
+        uses: gautamkrishnar/keepalive-workflow@master
